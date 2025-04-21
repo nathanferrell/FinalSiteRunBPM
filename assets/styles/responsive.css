@@ -1,0 +1,451 @@
+/* base styles to ensure responsiveness - setting things up */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* base scale for any images*/
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* styles and media queries for screens smaller than 1024px */
+@media (max-width: 1024px) {
+
+  /* hides home button on smaller screen */
+  .home-btn {
+    display: none;
+  }
+
+  /* shrink input width */
+  input {
+    width: 90%;
+    margin-left: 0;
+  }
+
+  /* aligns items in song card as left-hand columns */
+  .song-card {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  /* ensure song info and bpm element spans full width with a left align and top margins */
+  .song-info,
+  .song-bpm {
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px;
+    padding: 5px;
+    width: 100%;
+    max-width: 900px;
+  }
+  
+  .added-label,
+  .add-playlist-btn {
+    font-size: 18px;
+    padding: 8px 16px;
+    margin: 15px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto; /* horizontal center */
+    text-align: center;
+  }
+  
+  .playlist-toggle-btn {
+    font-size: 16px;
+    margin-left: 8px;
+  }
+  
+  .playlist-song-item {
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 0;
+  }
+
+  .playlist-song-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .remove-playlist-btn {
+    margin-top: 8px;
+    margin-bottom: 3px;
+  } 
+  
+  .playlist-song-controls {
+    justify-content: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .empty-message {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  /* adjust font and padding for mobile idea page */
+  .message {
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .message p {
+    font-size: 18px;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .meet-the-team {
+    padding: 20px;
+    margin: 30px auto;
+    width: 95%;
+  }
+
+  /* resize picture */
+  .temp_pic {
+    padding-left: 10px;
+    max-width: 80%;
+  }
+
+  .text {
+    padding: 20px;
+    margin: 30px auto;
+    width: 95%;
+  }
+
+  .about {
+    padding: 20px;
+    margin: 30px auto;
+    width: 95%;
+  }
+}
+
+/* styles and media queries for screens smaller than 768px (mobile ideal) */
+@media (max-width: 768px) {
+  /* adjust header layout for smaller viewports */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+
+  /* sets logo to be in the absolute center as needed */
+  .logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    margin: 0;
+  }
+
+  /* shrink logo size to fit smaller viewports */
+  .logo {
+    font-size: 32px;
+  }
+
+  /* fix button size */
+  button {
+    font-size: 20px;
+    padding: 8px 16px;
+    margin: 10px;
+  }
+
+  /* stacking button options vertically with spacing - NEEDED FOR MOBILE SPACING */
+  .button-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* show nav items in horizontal row */
+  nav {
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* flatten dropdown down */
+  .dropdown-content {
+    position: absolute;
+    box-shadow: none;
+  }
+
+  /* setting position for dark mode */
+  #dark-mode {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  /* ensure search bar and filters are more responsive on mobile  */
+  #search-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* improve mobile usability - fix widths, padding, border sizing, etc. */
+  #search-input {
+    width: 100%;
+    max-width: 750px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    flex-shrink: 1;
+  }
+
+  /* stacking filter options vertically with spacing - NEEDED FOR MOBILE SPACING */
+  #filter-container {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .playlist-header {
+    font-size: 15px;
+  }
+  
+  .added-label,
+  .add-playlist-btn {
+    text-align: center;
+    font-size: 16px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto; /* horizontal center */
+    text-align: center;
+  }
+  
+  .playlist-toggle-btn {
+    font-size: 14px;
+  }
+  
+  .playlist-song-item {
+    padding: 5px 0;
+    align-items: center;
+  }
+  
+  .playlist-song-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .empty-message {
+    font-size: 16px;
+    padding: 8px;
+  }  
+
+  /* adjust font and padding for mobile idea page */
+  .message {
+    font-size: 18px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .message p {
+    font-size: 16px;
+    padding: 12px;
+    width: 100%; 
+    align-content: center;
+  }
+
+  .meet-the-team {
+    margin: auto;
+    padding: 1px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* resize picture, convert to columns for mobile optimization */
+  .temp_pic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+    max-width: 60%;
+  }
+
+  .text {
+    margin: auto;
+    padding: 1px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .about {
+    margin: auto;
+    padding: 1px;
+    text-align: center;
+    align-items: center;
+  }
+
+  /* shrink footer to fit mobile */
+  footer {
+    font-size: 10px;
+    text-align: center;
+  }
+}
+
+/* styles and media queries for screens smaller than 480px */
+@media (max-width: 480px) {
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+
+   /* adjust button width */
+   button {
+    width: 100%;
+  }
+
+  /* resize logo */
+  .logo {
+    font-size: 24px;
+  }
+
+  /* do not display home button */
+  .home-btn {
+    display: none;
+  }
+
+  /* shrink dropdown button */
+  .dropdown-menu {
+    display: block;
+  }
+
+  /* shrink dark mode for mobile */
+  #dark-mode {
+    padding: 6px;
+    margin: 0;
+    margin-top: 10px;
+    position: absolute;
+    align-items: center;
+  }
+
+  #dark-mode svg {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+  }
+
+  /* shrink search bar */
+  #search {
+    font-size: 16px;
+    margin-left: 0;
+  }
+
+  /* shrink input */
+  input {
+    font-size: 16px;
+    height: auto;
+    margin: 10px 0;
+  }
+
+  /* shrink filter options */
+  #search-type,
+  #genre-select {
+    font-size: 12px;
+  }
+
+  /* shrink song info tiles */
+  .song-info h2 {
+    font-size: 18px;
+  }
+
+  .song-info p,
+  .song-bpm p,
+  .message p {
+    font-size: 14px;
+  }
+
+  /* add more padding to the song cards */
+  .song-card
+  .message p {
+    padding: 15px;
+  }
+  
+  .added-label,
+  .add-playlist-btn {
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .playlist-toggle-btn {
+    font-size: 12px;
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .playlist-song-item {
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+  }
+  
+  .playlist-song-controls {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .empty-message {
+    font-size: 14px;
+  }  
+
+  /* resize meet the team text */
+  .meet-the-team {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* resize picture, convert to columns for mobile optimization */
+  .temp_pic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+    max-width: 40%;
+  }
+
+  .text {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .about p {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
