@@ -127,6 +127,7 @@ img {
 }
 
 /* styles and media queries for screens smaller than 768px (mobile ideal) */
+/* styles and media queries for screens smaller than 768px (mobile ideal) */
 @media (max-width: 768px) {
   /* adjust header layout for smaller viewports */
   header {
@@ -144,17 +145,16 @@ img {
     position: static;
   }
 
+  /* Fix hamburger menu positioning */
   .dropdown {
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    z-index: 1000;
+    position: relative;
+    margin-right: 10px; /* Add space between hamburger and logo */
   }
 
   /* sets logo to be in the absolute center as needed */
   .logo-container {
     position: absolute;
-    left: 50%;
+    left: 55%; /* Shift slightly right from center */
     transform: translateX(-50%);
     text-align: center;
     margin: 0;
@@ -179,11 +179,7 @@ img {
     gap: 10px;
   }
 
-  /* flatten dropdown down */
-  .dropdown-content {
-    position: absolute;
-    box-shadow: none;
-  }
+ 
 
   /* setting position for dark mode */
   #dark-mode {
@@ -319,14 +315,13 @@ img {
 
 /* styles and media queries for screens smaller than 480px */
 @media (max-width: 480px) {
-
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     padding: 10px;
-    flex-wrap: wrap;
+    
   }
 
   nav {
@@ -336,12 +331,10 @@ img {
     position: static;
   }
 
-  .dropdown {
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    z-index: 1000;
-  }
+  /* Further adjust hamburger menu and logo positioning */
+ 
+  
+
 
   /* adjust button width */
   button {
@@ -358,10 +351,7 @@ img {
     display: none;
   }
 
-  /* shrink dropdown button */
-  .dropdown-menu {
-    display: block;
-  }
+  
 
   /* shrink dark mode for mobile */
   #dark-mode {
@@ -471,4 +461,3 @@ img {
     font-size: 14px;
   }
 }
-

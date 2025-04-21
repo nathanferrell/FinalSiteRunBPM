@@ -127,38 +127,45 @@ img {
 }
 
 /* styles and media queries for screens smaller than 768px (mobile ideal) */
+/* styles and media queries for screens smaller than 768px (mobile ideal) */
 @media (max-width: 768px) {
   /* adjust header layout for smaller viewports */
   header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
     padding: 10px;
+    position: relative;
   }
 
   nav {
     display: flex;
-    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
     align-items: center;
-    position: static;
   }
 
+  /* Left zone for hamburger */
   .dropdown {
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    z-index: 1000;
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    margin-right: 10px;
   }
 
-  /* sets logo to be in the absolute center as needed */
+  /* Center zone for logo */
   .logo-container {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    flex: 2;
+    display: flex;
+    justify-content: center;
     text-align: center;
-    margin: 0;
     z-index: 1;
+  }
+
+  /* Right zone for dark mode toggle */
+  #dark-mode {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    position: static;
   }
 
   /* shrink logo size to fit smaller viewports */
@@ -177,20 +184,6 @@ img {
   .button-container {
     flex-direction: column;
     gap: 10px;
-  }
-
-  /* flatten dropdown down */
-  .dropdown-content {
-    position: absolute;
-    box-shadow: none;
-  }
-
-  /* setting position for dark mode */
-  #dark-mode {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    z-index: 1000;
   }
 
   /* ensure search bar and filters are more responsive on mobile  */
@@ -319,33 +312,39 @@ img {
 
 /* styles and media queries for screens smaller than 480px */
 @media (max-width: 480px) {
-
   header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
     padding: 10px;
-    flex-wrap: wrap;
+    position: relative;
   }
 
   nav {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    position: static;
-  }
-
-  .dropdown {
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    z-index: 1000;
-  }
-
-  /* adjust button width */
-  button {
     width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Keep the same 3-column layout but adjust sizing */
+  .dropdown {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .logo-container {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+  }
+
+  #dark-mode {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1000;
   }
 
   /* resize logo */
@@ -353,26 +352,17 @@ img {
     font-size: 24px;
   }
 
+  /* adjust button width */
+  button {
+    width: 100%;
+  }
+
   /* do not display home button */
   .home-btn {
     display: none;
   }
 
-  /* shrink dropdown button */
-  .dropdown-menu {
-    display: block;
-  }
-
   /* shrink dark mode for mobile */
-  #dark-mode {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    padding: 6px;
-    margin: 0;
-    z-index: 1000;
-  }
-
   #dark-mode svg {
     width: 20px;
     height: 20px;
@@ -471,4 +461,3 @@ img {
     font-size: 14px;
   }
 }
-
